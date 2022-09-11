@@ -32,7 +32,7 @@ Par ailleurs, toute personne qui ne respecterait pas les consignes pourrait se v
 
 ## Mise en place du projet
 
-De la même manière que ce qui a été vu en cours, commencez par rejoindre le répertoire de l'exercice disponible à cette adresse : https://classroom.github.com/a/43C_UHoY 
+De la même manière que ce qui a été vu en cours, commencez par rejoindre le répertoire de l'exercice disponible à cette adresse : [https://classroom.github.com/a/43C_UHoY ](https://classroom.github.com/a/RJg_Z6rF)
 
 Si vous n'êtes pas déjà identifié, faites-le en utilisant les identifiants de votre compte Github.
 
