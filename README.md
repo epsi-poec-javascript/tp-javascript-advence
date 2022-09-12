@@ -12,10 +12,6 @@ Pour faciliter le rendu et la correction, il vous est demandé d’utiliser l’
 La réalisation du projet s’effectue individuellement et sans Internet. Seuls la documentation de Mozilla, les notes de cours et les exercices sont autorisés.
 Pour rappel, voici le lien de la documentation : https://developer.mozilla.org/fr/ 
 
-L’idée n’est pas de vous pénaliser, mais plutôt de vous apprendre à utiliser une documentation. Plagier bêtement du code source provenant d’Internet n’aura aucune plus-value sur votre apprentissage de JavaScript. Le TP à pour objectif d’évaluer vos compétences, jouez donc le jeu.
-
-Pour finir, vous allez devoir créer un document qui reprendra toutes les notes de tout ce que vous avez effectué pour réaliser les différentes étapes du TP. Sachez que ce document est à rendre au format PDF dans les sources de votre application. Ces notes pourront vous être très utiles au cours de prochain projet.
-
 ## Évaluation :
 
 Le TP sera évalué sur deux points :
@@ -24,11 +20,6 @@ Le TP sera évalué sur deux points :
 - 5 points sont destinés pour évaluer votre document PDF
 
 Vous pouvez facilement obtenir la moyenne si vous vous appliquez sur la présentation de votre documentation et si vous suivez correctement les consignes de l’exercice. 
-
-*Petit conseil : pour votre documentation, n'hésitez pas à ajouter des captures d’écrans, des schémas ou autres explications que vous jugerez utiles.*
-
-Par ailleurs, toute personne qui ne respecterait pas les consignes pourrait se voir retirer des points.
-
 
 ## Mise en place du projet
 
