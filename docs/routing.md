@@ -8,14 +8,16 @@ Le routing est donc l'ensemble des associations URL / Comportements de votre app
 Dans une Single Page Application, on chercher à faire croire au visiteur qu'il navigue dans différentes pages (et donc différentes URL) alors qu'en réalité il reste toujours sur la même page (index.html) et c'est Javascript qui donne l'impression que la page change lorsque l'URL change.
 
 ## Sommaire :
-* [But de l'exercice :](#but-de-l-exercice--)
-* [Mise en place et premiers tests](#mise-en-place-et-premiers-tests)
-    + [Premier test : la page d'accueil](#premier-test---la-page-d-accueil)
-    + [Deuxième test : la future page de détails d'une tâche](#deuxième-test---la-future-page-de-détails-d-une-tâche)
-* [Refactoring pour aller plus loin](#refactoring-pour-aller-plus-loin)
-* [Gestion dynamique des URLs](#gestion-dynamique-des-urls)
-* [Page de détails d'une tâche](#page-de-détails-d-une-tâche)
-* [Ce que vous avez appris](#ce-que-vous-avez-appris--)
+- [Routing et affichage dynamique](#routing-et-affichage-dynamique)
+  - [Sommaire :](#sommaire-)
+  - [But de l'exercice :](#but-de-lexercice-)
+  - [Mise en place et premiers tests](#mise-en-place-et-premiers-tests)
+    - [Premier test : la page d'accueil](#premier-test--la-page-daccueil)
+    - [Deuxième test : la future page de détails d'une tâche](#deuxième-test--la-future-page-de-détails-dune-tâche)
+  - [Refactoring pour aller plus loin](#refactoring-pour-aller-plus-loin)
+  - [Gestion dynamique des URLs](#gestion-dynamique-des-urls)
+  - [Page de détails d'une tâche](#page-de-détails-dune-tâche)
+- [Ce que vous avez appris :](#ce-que-vous-avez-appris-)
 
 ## But de l'exercice :
 Nous souhaitons avoir une deuxième page dans notre application qui sera chargée d'afficher le détail d'une tâche donnée. Nous avons donc deux affichages possibles :
@@ -359,4 +361,4 @@ A ce stade, notre routeur fonctionne comme on le souhaitait :
 * Dispatcher par vous même un événément `popstate` ;
 * Notion d' **outlet** : le container dans lequel le routeur affichera le contenu correspondant à une URL ;
 
-[Revenir au sommaire](../README.md) ou [Passer à la suite : Tester son code avec Jest](tests.md)
+[Revenir au sommaire](../README.md)

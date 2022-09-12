@@ -36,6 +36,7 @@ const TODO_ITEMS = [
   { id: 1, text: "Faire les courses", done: false },
   { id: 2, text: "Aller chercher les enfants", done: true },
 ];
+
 ```
 
 ## Mettre en place un conteneur dans le HTML

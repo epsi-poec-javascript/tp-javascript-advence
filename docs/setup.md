@@ -1,30 +1,103 @@
 # Installation de dépendances de développement
 
-Dans la panoplie des outils Javascript modernes, le chef d'orchestre est le Node Package Manager (NPM). Il existe des alternatives (dont Yarn est la plus connue) mais NPM reste le gestionnaire de dépendances le plus utilisé. 
+Le Web et les navigateurs ont beaucoup évolué depuis leur création, notamment en proposant des fonctionnalités très intéressantes pour nos applications. Malgré une amélioration de la performance des connexions Internet, l’optimisation des performances pour les applications devient le nerf de la guerre.
 
-Comme pour tous les autres langages de programmation, le gestionnaire de dépendances (package manager) a pour mission de vous aider à installer, mettre à jour, supprimer et surtout lister les dépendances (librairies) dont votre projet est tributaire.
+C’est d’ailleurs sur l’une de ces caractéristiques que s’appuie le bot de Google visant à référencer les différents sites dans son moteur de recherche. Google force toutes les applications du Web à accroitre leurs performances pour se placer dans les premiers résultats de recherche, on parle notamment de SEO.
+
+Auparavant cela n’aurait jamais pu être possible. Mais avec l’évolution des technologies, il est maintenant possible de se constituer un environnement qui va se composer de tous les outils nécessaires au développement dit moderne.
 
 ## Sommaire :
-  * [Initialiser la gestion de dépendances dans le projet](#initialiser-la-gestion-de-dépendances-dans-le-projet)
-  * [Installer le module bundler Webpack](#installer-le-module-bundler-webpack)
-  * [Lancer l'application dans le navigateur](#lancer-l-application-dans-le-navigateur)
-  * [Vérification de l'outillage et des liens](#vérification-de-l-outillage-et-des-liens)
-  * [Ce que vous avez appris ](#ce-que-vous-avez-appris--)
+
+- [Installation de dépendances de développement](#installation-de-dépendances-de-développement)
+  - [Sommaire :](#sommaire-)
+  - [Premier constat](#premier-constat)
+  - [Initialiser la gestion de dépendances dans le projet](#initialiser-la-gestion-de-dépendances-dans-le-projet)
+  - [Installer le module bundler Webpack](#installer-le-module-bundler-webpack)
+  - [Vérification de l'outillage et des liens](#vérification-de-loutillage-et-des-liens)
+- [Ce que vous avez appris :](#ce-que-vous-avez-appris-)
+
+## Premier constat
+
+Commencez par créer un fichier « index.html » en complétant la structure de base et créez un fichier `script.js` dans le dossier `assets/js/`.
+
+Admettons que le fichier JavaScript « script » sera celui qui contiendra votre code principal pour l’application. Dans ce fichier, écrivez l’instruction pour afficher le texte « Mon fichier principal » dans la console.
+
+En regardant la console, nous devrions simplement obtenir le message que nous avons demandé d’afficher et certainement une erreur au sujet d’un favicon non trouvé. Ceci est tout à fait normal.
+
+Dirigez-vous maintenant dans l’onglet « Réseau » de votre console.
+
+1. Que remarquez-vous ?
+2. Expliquez la problématique perçue au travers de votre remarque.
+
+Pour rendre l’application beaucoup plus attrayante, vous allez installer la bibliothèque « FontAwesome ». Celle-ci ajoute une multitude d’icônes pouvant être utilisées au sein des pages de l’application. Vous retrouverez la bibliothèque à cette adresse : [https://fontawesome.com/](https://fontawesome.com/https:/).
+
+Pour cela vous utiliserez ces deux liens :
+
+* Le fichier CSS disponible à cette adresse : `https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css`
+* Le fichier JS disponible à cette adresse : `https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js`
+
+Ces deux liens font référence à un CDN (Content Delivery Network), ils délibèrent des ressources en choisissant le serveur le plus proche de la position géographique de l’Internaute.
+
+Une fois que vous avez intégré ces deux liens dans votre page HTML, vous pouvez vérifier que la bibliothèque fonctionne correctement en ajoutant cette balise à la fin du texte de votre titre :
+
+`<i class="fa-solid fa-cloud"></i>`
+
+Vous devriez voir apparaitre un nuage. Il est également possible de personnaliser l’icône que vous souhaitez afficher. Vous pouvez accéder à la page listant toutes les icônes ici : [https://fontawesome.com/search](https://fontawesome.com/searchhttps:/)
+
+Attention : certaines icônes sont payantes, pensez à bien filtrer les icônes gratuites dans les paramètres de recherche.
+
+Cette intégration de bibliothèque n’est pour le moment pas problématique même si elle n’arrange en rien le premier constat que vous avez fait. Imaginez si le nombre de bibliothèques venait à se multiplier, leur gestion deviendrait beaucoup trop compliquée.
+
+Au travers de ces deux constats, vous devez comprendre qu’il devient aujourd’hui nécessaire d’organiser son environnement de développement afin d’adopter les bons outils et ainsi assurer la qualité de son application.
+
+L’élément clé c’est le gestionnaire de dépendance.
 
 ## Initialiser la gestion de dépendances dans le projet
-Pour pouvoir bénéficier des forces de NPM dans votre projet, vous devez tout d'abord créer le manifeste qui permettra de le configurer : le fichier package.json
 
-Vous pouvez faire celà très rapidement en lançant la commande `npm init -y`
+Depuis la modernisation du JavaScript, notamment en rendant possible son exécution côté serveur à NodeJS, le nombre d’outils et de bibliothèques a très largement augmenté.
 
-Vous verrez alors apparaitre un fichier package.json qui contiendra des informations basiques sur votre projet mais qui deviendra encore plus précis au fur et à mesure que l'on va ajouter des dépendances et mêmes des tâches automatisées (scripts).
+Comme tout bon langage serveur qui se respecte, NodeJS intègre lui aussi un gestionnaire de dépendances. Même s’il existe d’autres alternatives, c’est principalement Node Package Manager (NPM) qui va jouer ce rôle de chef d’orchestre.
 
-Sachez aussi que chaque package (librairie ou outil) que vous allez installer verra ses fichiers être téléchargés directement dans un dossier node_modules dont vous n'avez pas à vous préoccuper. C'est de la prérogative de NPM que de gérer ce dossier.
+Il faut savoir qu’un gestionnaire de dépendance, aussi appelé package manager, va-vous aider à installer, lister, supprimer et mettre à jour toutes les dépendances (librairies) dont votre projet aura besoin pour fonctionner.
 
+Pour pouvoir bénéficier de la puissance de NPM, il va vous falloir installer NodeJS. Selon votre système d’exploitation, voici les manipulations à effectuer :
 
-## Installer le module bundler Webpack 
+**Windows :**
+Sur Windows, rendez-vous sur [https://nodejs.org/fr/](https://nodejs.org/fr/https:/) et téléchargez la version LTS (long terme support). Exécutez le fichier que vous venez de télécharger et suivez les étapes d’installations. Vous n’avez pas besoin de modifier quoique ce soit, laissez les paramètres par défauts.
+
+**macOS :**
+Pour macOS, il vous suffit d’ouvrir un terminal et de lancer la commande « brew install node »
+
+Pour tester que tout fonctionne correctement essayez d’exécuter `node -v` et `npm -v` chacune de ces commandes devrait vous retourner un numéro de version.
+
+Dans le cas où cela ne fonctionne pas :
+
+* Si vous avez utilisé la console de votre éditeur de code, veuillez le fermer et le rouvrir avant de tester à nouveau.
+* Sinon vérifiez la variable d’environnement de votre système d’exploitation.
+
+Dans votre projet, vous pouvez désormais créer le manifeste permettant la configuration de celui-ci.
+
+Vous pouvez faire cela très facilement grâce à la commande `npm init -y`.
+
+Cette commande doit vous faire apparaitre votre manifeste qui se nomme  `package.json`. Ce fichier contient en fait toutes les informations relatives à votre projet. Il va par exemple stocker la liste des librairies installées dans votre projet.
+
+Essayez d’installer FontAwesome depuis NPM en lançant la commande suivante : `npm install --save @fortawesome/fontawesome-free`
+
+1. Que remarquez-vous ? Veillez à bien détailler votre réponse.
+
+Remplacez maintenant les liens de votre page HTML :
+
+* Pour le fichier CSS, utilisez `node_modules/@fortawesome/fontawesome-free/css/all.css`
+* Pour le fichier JS, utilisez `node_modules/@fortawesome/fontawesome-free/js/all.js`
+
+Si vous ouvrez votre fichier « package.json », vous devriez normalement voir figurer FontAwesome dans la liste des dépendances.
+
+## Installer le module bundler Webpack
+
 Dans le monde du front, la rapidité d'affichage d'une page est une clé de la réussite. Divers patterns ont été imaginés pour réussir à obtenir une meilleure rapidité dans le chargement d'une page.
 
 L'un d'eux est le "bundling" qui consiste à :
+
 1. Permettre aux developpeuses et développeurs de coder dans différents fichiers afin d'organiser le code au mieux ;
 2. Ne livrer malgré tout qu'un seul fichier JS au navigateur lors de la visite de la page (et donc améliorer temps de chargement en réduisant le nombre de requêtes HTTP concernant la récupération du Javascript) ;
 
@@ -65,37 +138,12 @@ Il faut ensuite permettre aux développeurs de lancer Webpack lorsqu'ils le souh
 
 Pour tester cette nouvelle tâche, nous lançons simplement la commande suivante : `npm run dev` et webpack devrait générer le fichier *dist/app.js*
 
-## Lancer l'application dans le navigateur
-
-Ayant installé WebPack, on peut désormais coder dans différents fichiers et organiser nos sources comme nous le souhaitons tout en ayant la possibilité de ne livrer qu'un seul fichier au navigateur (le fameux *dist/app.js*).
-
-Pour continuer à travailler, on aimerait désormais afficher le site au sein du navigateur afin de vérifier notre avancée de façon concrète et visuelle. Pour cela nous avons besoin d'un serveur web léger et rapide, qu'on peut obtenir facilement grâce au package **live-server**. Son but est de lancer facilement un serveur web qui servira notre application en local.
-
-Lançons donc la commande :
-
-`npm install --save-dev live-server`
-
-Et encore une fois, afin de permettre aux développeurs de lancer facilement ce serveur web, nous allons configurer une nouvelle tâche pour NPM :
-
-```json
-// package.json
-
-"scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development",
-    "serve": "live-server --entry-file=./index.html"
-},
-```
-
-Ce que nous décrivons ici, c'est qu'en lançant la commande `npm run serve` nous allons lancer un serveur web local qui servira toujours le fichier *index.html* quelque soit la requête HTTP qu'il recevra.
-
-**Attention :** comprenez bien que toutes les URLs que vous taperez sur cette application seront toujours redirigées vers index.html, ce qui ne serait pas le cas sur un serveur web classique tel que Apache ou NGinx, du moins pas sans configuration particulière ! Ce sera donc à prendre en compte lors du déploiement de votre application, si vous décidez par exemple de déployer sur un serveur Apache, il vous faudra configurer le même comportement.
-
 ## Vérification de l'outillage et des liens
 
 Maintenant qu'on a mis en place les outils de base, nous allons vérifier que tout fonctionne.
 
 Premièrement, ajoutez le code suivant dans le fichier *src/app.js*
+
 ```js
 // src/app.js
 console.log("Tout fonctionne");
@@ -112,6 +160,7 @@ Notez que pour l'instant, le fichier dist/app.js ne contient absolument pas le c
 Vous pouvez maintenant aller sur votre navigateur et ouvrir la console de développement afin de vous assurer que vous obtenez bien le message **"Tout fonctionne"**.
 
 # Ce que vous avez appris :
+
 * Utiliser NPM afin de gérer les dépendances (librairies ou outils) nécessaires à votre projet ;
 * Utiliser NPM afin de configurer des tâches que vous pourrez lancer ;
 * Utiliser Webpack pour "bundler" vos fichiers JS en un fichier unique (et bien plus) ;
